@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Auteur;
+use App\Models\Publication;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // Auteur::where('active', 1)->where('ddn', '<', now()->subYears(18))->get();
+    return Auteur::active()->majeur()->get();
 });
+
+
+// Auteur::find(42)->publications;
+
+Route::get('/publications/{id}', function (Request $request, $id) {
+    return Auteur::find($id)->publications;
+});
+
+/*
+Route::get('/publications/{id}', function (Request $request, Auteur $auteur) {
+    return $auteur;
+});
+*/

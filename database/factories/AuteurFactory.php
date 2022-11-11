@@ -20,6 +20,7 @@ class AuteurFactory extends Factory
             'nom' => fake()->lastName(),
             'prenom' => fake()->firstName(),
             'ddn' => fake()->date(),
+            'active' => fake()->boolean()
         ];
     }
 }
