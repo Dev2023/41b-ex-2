@@ -17,8 +17,7 @@ class AuteurSeeder extends Seeder
      */
     public function run()
     {
-        ddd('!');
-        Auteur::factory()->create([
+        /*Auteur::factory()->create([
             'nom' => 'Test',
             'prenom' => 'Auteur',
         ]);
@@ -26,6 +25,8 @@ class AuteurSeeder extends Seeder
             'nom' => 'Boom',
             'prenom' => 'Paul',
             'ddn' => new DateTime()
-        ]);
+        ]);*/
+
+        Auteur::factory(20)->create();
     }
 }
